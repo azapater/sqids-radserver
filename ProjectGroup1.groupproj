@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{9FD2645C-9198-48E5-BDFE-4888134F7207}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="EMSSqids.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCLSqids.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="EMSSqids">
+        <MSBuild Projects="EMSSqids.dproj"/>
+    </Target>
+    <Target Name="EMSSqids:Clean">
+        <MSBuild Projects="EMSSqids.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="EMSSqids:Make">
+        <MSBuild Projects="EMSSqids.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLSqids">
+        <MSBuild Projects="VCLSqids.dproj"/>
+    </Target>
+    <Target Name="VCLSqids:Clean">
+        <MSBuild Projects="VCLSqids.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLSqids:Make">
+        <MSBuild Projects="VCLSqids.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="EMSSqids;VCLSqids"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="EMSSqids:Clean;VCLSqids:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="EMSSqids:Make;VCLSqids:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
