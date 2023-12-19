@@ -41,6 +41,6 @@ requires
   FireDACSqliteDriver;
 
 contains
-  Unit1 in 'Unit1.pas' {CustomersResource: TDataModule};
+  Customers in 'Customers.pas' {CustomersResource: TDataModule};
 
 end.

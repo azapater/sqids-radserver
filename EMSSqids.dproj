@@ -176,7 +176,7 @@
         <DCCReference Include="FireDACIBDriver.dcp"/>
         <DCCReference Include="dsnap.dcp"/>
         <DCCReference Include="FireDACSqliteDriver.dcp"/>
-        <DCCReference Include="Unit1.pas">
+        <DCCReference Include="Customers.pas">
             <Form>CustomersResource</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
